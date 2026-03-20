@@ -55,13 +55,9 @@ section {
   pointer-events: none;
   user-select: none;
   z-index: 2;
-  opacity: 0.95;
-  object-fit: contain;
-  transform-style: preserve-3d;
-  will-change: transform;
-  filter:
-    drop-shadow(0 0 20px rgba(255, 0, 200, 0.22))
-    drop-shadow(0 0 35px rgba(0, 220, 255, 0.18));
+  opacity: 0.9;
+  mix-blend-mode: screen;
+  filter: brightness(1.2) saturate(1.15);
 }
 
 .palm-left {
