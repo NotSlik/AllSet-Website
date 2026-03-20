@@ -1,18 +1,33 @@
-// script.js
-
-const palmLeft = document.querySelector(".palm-left");
-const palmRight = document.querySelector(".palm-right");
-
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-  const tilt = Math.min(scrollY * 0.03, 12); // max 12 degrees
-
-  palmLeft.style.transform = `rotate(${tilt}deg)`;
-  palmRight.style.transform = `rotate(-${tilt}deg)`;
-});
-
 document.addEventListener('DOMContentLoaded', () => {
-  // Mobile nav toggle
+  const palmLeft = document.querySelector('.palm-left');
+  const palmRight = document.querySelector('.palm-right');
+  let palmFrame = null;
+
+  const updatePalmTilt = () => {
+    palmFrame = null;
+
+    if (!palmLeft || !palmRight) {
+      return;
+    }
+
+    const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    const progress = Math.min(window.scrollY / maxScroll, 1);
+    const maxRotation = window.innerWidth <= 720 ? 7 : 14;
+    const leftRotation = progress * maxRotation;
+    const rightRotation = progress * -maxRotation;
+
+    palmLeft.style.transform = `rotate(${leftRotation}deg)`;
+    palmRight.style.transform = `scaleX(-1) rotate(${rightRotation}deg)`;
+  };
+
+  const requestPalmTiltUpdate = () => {
+    if (palmFrame !== null) {
+      return;
+    }
+
+    palmFrame = window.requestAnimationFrame(updatePalmTilt);
+  };
+
   const navToggle = document.getElementById('navToggle');
   const nav = document.querySelector('.nav');
 
@@ -21,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.toggle('open');
     });
 
-    // Close nav after clicking a link (on mobile)
     nav.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') {
         nav.classList.remove('open');
@@ -29,13 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Smooth scroll for internal links (#hero, #services, etc.)
   const internalLinks = document.querySelectorAll('a[href^="#"]');
 
   internalLinks.forEach((link) => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
-      const id = href.slice(1); // remove the #
+      const id = href.slice(1);
       const target = document.getElementById(id);
 
       if (target) {
@@ -45,22 +58,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Set current year in footer
   const yearSpan = document.getElementById('year');
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  // Handle the quote form note
   const quoteForm = document.getElementById('quoteForm');
   const formNote = document.getElementById('formNote');
 
   if (quoteForm && formNote) {
     quoteForm.addEventListener('submit', () => {
-      // Don't prevent default so Formspree still sends the email
       formNote.textContent =
         "Thanks! Your request has been sent. We'll reach out using the contact info you provided.";
       formNote.style.color = '#a5f3fc';
     });
   }
+
+  requestPalmTiltUpdate();
+  window.addEventListener('scroll', requestPalmTiltUpdate, { passive: true });
+  window.addEventListener('resize', requestPalmTiltUpdate);
 });
