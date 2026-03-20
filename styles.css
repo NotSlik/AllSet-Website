@@ -1,3 +1,32 @@
+.palm {
+  position: fixed;
+  top: 80px;
+  z-index: 2;
+  pointer-events: none;
+  transition: transform 0.12s linear;
+}
+
+.palm img {
+  display: block;
+  width: 180px;
+  max-width: 22vw;
+  height: auto;
+}
+
+.palm-left {
+  left: 0;
+  transform-origin: bottom left;
+}
+
+.palm-right {
+  right: 0;
+  transform-origin: bottom right;
+}
+
+.palm-right img {
+  transform: scaleX(-1);
+}
+
 :root {
   --bg-main: #050608;
   --bg-elevated: #0c0f14;
