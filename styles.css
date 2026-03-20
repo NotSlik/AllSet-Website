@@ -738,18 +738,27 @@ select:focus {
 }
 
 @media (max-width: 720px) {
-  .palm {
-    height: min(42vh, 320px);
-    opacity: 0.45;
-  }
+.palm {
+  position: fixed;
+  top: 80px;
+  width: 220px;
+  height: auto;
+  z-index: 9999;
+  opacity: 1;
+  pointer-events: none;
+  outline: 2px solid red;
+}
 
-  .palm-left {
-    left: -1.25rem;
-  }
+.palm-left {
+  left: 0;
+}
 
-  .palm-right {
-    right: -1.25rem;
-  }
+.palm-right {
+  right: 0;
+  transform: scaleX(-1);
+}
+
+
 
   .section {
     padding: 3.5rem 0;
