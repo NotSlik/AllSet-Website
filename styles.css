@@ -6,7 +6,6 @@
   --text-main: #f4f4f4;
   --text-soft: #b0b5c3;
   --accent-blue: #008cff;
-  --accent-blue-soft: rgba(0, 140, 255, 0.2);
   --accent-blue-glow: 0 0 20px rgba(0, 140, 255, 0.6);
   --shadow-soft: 0 18px 45px rgba(0, 0, 0, 0.75);
   --radius-lg: 18px;
@@ -19,7 +18,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Reset-ish */
 *,
 *::before,
 *::after {
@@ -32,7 +30,7 @@ body {
   background: radial-gradient(circle at top, #111827 0, #050608 45%, #000000 100%);
   color: var(--text-main);
   -webkit-font-smoothing: antialiased;
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 img {
@@ -51,35 +49,32 @@ section {
 
 .palm {
   position: fixed;
-  top: 0;
-  height: 100vh;
+  bottom: -1.5rem;
+  height: min(78vh, 820px);
   width: auto;
-  max-width: min(26vw, 280px);
-  object-fit: contain;
-  object-position: bottom;
   pointer-events: none;
   user-select: none;
-  z-index: 5;
-  opacity: 0.9;
-  filter:
-    drop-shadow(0 0 18px rgba(255, 0, 200, 0.28))
-    drop-shadow(0 0 28px rgba(0, 200, 255, 0.22));
+  z-index: 2;
+  opacity: 0.95;
+  object-fit: contain;
+  transform-style: preserve-3d;
   will-change: transform;
+  filter:
+    drop-shadow(0 0 20px rgba(255, 0, 200, 0.22))
+    drop-shadow(0 0 35px rgba(0, 220, 255, 0.18));
 }
 
 .palm-left {
-  left: max(-2.5rem, -4vw);
+  left: -1rem;
   transform-origin: bottom left;
   transform: rotate(0deg);
 }
 
 .palm-right {
-  right: max(-2.5rem, -4vw);
+  right: -1rem;
   transform-origin: bottom right;
   transform: scaleX(-1) rotate(0deg);
 }
-
-/* Layout */
 
 .container {
   width: min(1120px, 100% - 2.5rem);
@@ -111,8 +106,6 @@ section {
   margin: 0;
   color: var(--text-soft);
 }
-
-/* Header & Nav */
 
 .header {
   position: sticky;
@@ -203,8 +196,6 @@ section {
   width: 100%;
 }
 
-/* Mobile nav toggle */
-
 .nav-toggle {
   display: none;
   flex-direction: column;
@@ -221,13 +212,10 @@ section {
   border-radius: 999px;
 }
 
-/* Hero */
-
 .hero {
   padding-top: 5.5rem;
 }
 
-/* top CTA buttons above logo */
 .hero-top-cta {
   display: flex;
   justify-content: flex-end;
@@ -239,8 +227,6 @@ section {
   font-size: 0.78rem;
   padding-inline: 1.1rem;
 }
-
-/* big logo above hero card */
 
 .hero-logo-wrapper {
   display: flex;
@@ -268,6 +254,8 @@ section {
     rgba(12, 15, 20, 0.9)
   );
   padding-top: 3.5rem;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-content h1 {
@@ -341,8 +329,6 @@ section {
   color: var(--text-soft);
 }
 
-/* Buttons */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -389,8 +375,6 @@ section {
   width: 100%;
 }
 
-/* Bordered cards */
-
 .bordered-card {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-grey);
@@ -424,15 +408,13 @@ section {
   z-index: -1;
 }
 
-/* SERVICES */
-
 .services-section {
   overflow: hidden;
 }
 
 .services-section .container {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .services-grid {
@@ -491,8 +473,6 @@ section {
   margin-top: 0.75rem;
 }
 
-/* PHOTO BAND between hero and services */
-
 .section-photo-band {
   padding: 2rem 0 1.5rem;
 }
@@ -500,6 +480,8 @@ section {
 .photo-band-inner {
   width: min(1120px, 100% - 2.5rem);
   margin: 0 auto;
+  position: relative;
+  z-index: 3;
 }
 
 .photo-band-img {
@@ -512,8 +494,6 @@ section {
   filter: brightness(0.93) saturate(1.05);
   object-fit: cover;
 }
-
-/* Why section */
 
 .why-grid {
   display: grid;
@@ -539,8 +519,6 @@ section {
   font-size: 0.9rem;
 }
 
-/* Info strip */
-
 .section-muted {
   background: radial-gradient(circle at bottom, rgba(15, 23, 42, 0.9), #020617);
 }
@@ -560,8 +538,6 @@ section {
   color: var(--text-soft);
   font-size: 0.9rem;
 }
-
-/* About */
 
 .about-grid {
   display: grid;
@@ -588,8 +564,6 @@ section {
   color: var(--text-soft);
   font-size: 0.94rem;
 }
-
-/* Contact / quote */
 
 .contact-grid {
   display: grid;
@@ -697,8 +671,6 @@ select:focus {
   margin-top: 0.75rem;
 }
 
-/* Footer */
-
 .footer {
   border-top: 1px solid rgba(120, 130, 150, 0.35);
   padding: 1.8rem 0 2.5rem;
@@ -718,12 +690,10 @@ select:focus {
   color: var(--text-soft);
 }
 
-/* Responsiveness */
-
 @media (max-width: 900px) {
   .palm {
-    max-width: min(30vw, 220px);
-    opacity: 0.72;
+    height: min(62vh, 560px);
+    opacity: 0.75;
   }
 
   .hero-inner {
@@ -773,16 +743,16 @@ select:focus {
 
 @media (max-width: 720px) {
   .palm {
-    max-width: min(24vw, 140px);
-    opacity: 0.55;
+    height: min(42vh, 320px);
+    opacity: 0.45;
   }
 
   .palm-left {
-    left: -2.25rem;
+    left: -1.25rem;
   }
 
   .palm-right {
-    right: -2.25rem;
+    right: -1.25rem;
   }
 
   .section {
