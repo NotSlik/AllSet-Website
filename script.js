@@ -1,5 +1,16 @@
 // script.js
 
+const palmLeft = document.querySelector(".palm-left");
+const palmRight = document.querySelector(".palm-right");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const tilt = Math.min(scrollY * 0.03, 12); // max 12 degrees
+
+  palmLeft.style.transform = `rotate(${tilt}deg)`;
+  palmRight.style.transform = `rotate(-${tilt}deg)`;
+});
+
 document.addEventListener('DOMContentLoaded', () => {
   // Mobile nav toggle
   const navToggle = document.getElementById('navToggle');
