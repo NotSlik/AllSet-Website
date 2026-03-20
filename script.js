@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
   const palmLeft = document.querySelector('.palm-left');
   const palmRight = document.querySelector('.palm-right');
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.querySelector('.nav');
+  const yearSpan = document.getElementById('year');
+  const quoteForm = document.getElementById('quoteForm');
+  const formNote = document.getElementById('formNote');
+
   let palmFrame = null;
 
   const updatePalmTilt = () => {
@@ -12,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const maxScroll = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
     const progress = Math.min(window.scrollY / maxScroll, 1);
-    const maxRotation = window.innerWidth <= 720 ? 7 : 14;
+    const maxRotation = window.innerWidth <= 720 ? 6 : 12;
     const leftRotation = progress * maxRotation;
     const rightRotation = progress * -maxRotation;
 
@@ -28,24 +34,21 @@ document.addEventListener('DOMContentLoaded', () => {
     palmFrame = window.requestAnimationFrame(updatePalmTilt);
   };
 
-  const navToggle = document.getElementById('navToggle');
-  const nav = document.querySelector('.nav');
-
   if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
-      nav.classList.toggle('open');
+      const isOpen = nav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
     });
 
     nav.addEventListener('click', (e) => {
       if (e.target.tagName === 'A') {
         nav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
       }
     });
   }
 
-  const internalLinks = document.querySelectorAll('a[href^="#"]');
-
-  internalLinks.forEach((link) => {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
       const id = href.slice(1);
@@ -58,18 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const yearSpan = document.getElementById('year');
   if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
   }
 
-  const quoteForm = document.getElementById('quoteForm');
-  const formNote = document.getElementById('formNote');
-
   if (quoteForm && formNote) {
     quoteForm.addEventListener('submit', () => {
       formNote.textContent =
-        "Thanks! Your request has been sent. We'll reach out using the contact info you provided.";
+        "Thanks! Your request has been sent. We will reach out using the contact info you provided.";
       formNote.style.color = '#a5f3fc';
     });
   }
