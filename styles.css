@@ -1,6 +1,0 @@
-
-body { font-family: Arial; margin:0; background:#0b0b0b; color:white; }
-.section { opacity:0; transform:translateY(40px); transition:0.6s; padding:50px; }
-.section.visible { opacity:1; transform:translateY(0); }
-.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:15px; }
-img { width:100%; border-radius:10px; }
