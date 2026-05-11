@@ -3,421 +3,267 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AllSet Services | Detailing, Cleaning & More</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>AllSet Cleaning | Exterior Care</title>
+  <meta name="description" content="AllSet Cleaning provides window cleaning, pressure washing, detailing, and seasonal exterior services in Iowa City and Cape Coral, Florida." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="header">
     <div class="container header-inner">
-      <!-- Logo in the header reloads the page / scrolls to top -->
-      <a href="#hero" class="logo">
-        <span class="logo-mark">A</span>
-        <span class="logo-text">AllSet</span>
+      <a href="#hero" class="brand" aria-label="AllSet Cleaning home">
+        <img src="assets/logo.png" alt="AllSet Cleaning logo" class="brand-logo" />
+        <span class="brand-text">AllSet</span>
       </a>
 
-      <!-- Main nav links -->
-      <nav class="nav">
+      <nav class="nav" id="navMenu" aria-label="Main navigation">
         <a href="#hero">Home</a>
         <a href="#services">Services</a>
         <a href="#why">Why AllSet</a>
         <a href="#about">About</a>
         <a href="#contact">Quote</a>
-        <a href="https://www.instagram.com/allset_services01/"
-           target="_blank"
-           rel="noopener">
-          Instagram
-        </a>
+        <a href="https://www.instagram.com/allset_services01/" target="_blank" rel="noopener">Instagram</a>
       </nav>
 
-      <button class="nav-toggle" id="navToggle">
-        <span></span><span></span>
+      <button class="nav-toggle" id="navToggle" aria-label="Open navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
       </button>
     </div>
   </header>
 
   <main>
-    <!-- HERO -->
-    <section id="hero" class="hero section">
-
-      <!-- TOP CTA BUTTONS -->
-      <div class="container hero-top-cta">
-        <a href="#contact" class="btn top-btn ghost-btn">Get a Quote</a>
-        <a href="https://www.instagram.com/allset_services01/"
-           class="btn top-btn ghost-btn"
-           target="_blank"
-           rel="noopener">
-          Instagram
-        </a>
-        <a href="tel:+13194711377" class="btn top-btn primary-btn">Call Us Now!</a>
-      </div>
-
-      <!-- BIG HERO LOGO ABOVE CARD -->
-      <div class="container hero-logo-wrapper">
-        <img src="allset-logo.png" alt="AllSet Logo" class="hero-logo">
-      </div>
-
-      <!-- HERO CONTENT CARD -->
-      <div class="container hero-inner bordered-card">
-        <div class="hero-content">
-          <h1>Premium Exterior & Auto Care, <span class="accent-text">AllSet</span> in One Call.</h1>
-          <p>
-            From crystal-clear windows and deep car detailing to pressure washing, snow removal, pool and trash bin
-            cleaning         – AllSet keeps your home, business and vehicles looking sharp all year!
-          </p>
-          <div class="hero-cta">
-            <a href="#contact" class="btn primary-btn">Get a Free Quote</a>
-            <a href="#services" class="btn ghost-btn">View Services</a>
-          </div>
-          <div class="hero-tags">
-            <span>Locally Owned · Iowa City</span>
-            <span>Student-Run · Great Work Ethic</span>
-            <span>Seasonal & One-Time Options</span>
-          </div>
+    <section id="hero" class="hero">
+      <div class="hero-bg"></div>
+      <div class="container hero-content">
+        <img src="assets/logo.png" alt="AllSet logo" class="hero-logo" />
+        <p class="eyebrow">Iowa City owned • Now serving Cape Coral, Florida</p>
+        <h1>Make the outside look <span>AllSet.</span></h1>
+        <p class="hero-copy">
+          Premium window cleaning, siding care, car detailing, and seasonal property services with clean communication and sharp results.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn primary-btn">Request a Free Quote</a>
+          <a href="#services" class="btn ghost-btn">View Services</a>
         </div>
-        <div class="hero-highlight">
-          <div class="stat-box">
-            <span class="stat-number">4+</span>
-            <span class="stat-label">Core Services</span>
+
+        <div class="hero-strip">
+          <div>
+            <strong>Local</strong>
+            <p>Iowa City crew with owner-level attention.</p>
           </div>
-          <div class="stat-box">
-            <span class="stat-number">365</span>
-            <span class="stat-label">Days a Year Coverage*</span>
+          <div>
+            <strong>Exterior</strong>
+            <p>Windows, siding, concrete, patios, and more.</p>
           </div>
-          <p class="stat-note">*Seasonal services like snow removal available in winter months.</p>
+          <div>
+            <strong>Detail</strong>
+            <p>Car care and clean finishes for every surface.</p>
+          </div>
+          <div>
+            <strong>Florida</strong>
+            <p>Now serving warmer-weather properties too.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- PHOTO BAND (window cleaning shot) -->
-    <section class="section section-photo-band">
-      <div class="photo-band-inner">
-        <img src="window-cleaner.jpg"
-             alt="AllSet window cleaning in Iowa City"
-             class="photo-band-img">
-      </div>
-    </section>
-
-    <section class="section">
+    <section id="services" class="section services-showcase">
       <div class="container">
         <div class="section-header">
-          <h2>Our Work</h2>
-          <p>Real results from real jobs.</p>
+          <p class="kicker">Services</p>
+          <h2>Three ways to get your property AllSet.</h2>
+          <p>Explore real work photos with simple sliders built for mobile and desktop.</p>
         </div>
 
-        <div class="services-grid">
-          <img src="window-cleaning-storefront-after.png" alt="Window cleaning storefront after" />
-          <img src="window-cleaning-pole-1.png" alt="Window cleaning pole" />
-          <img src="window-cleaning-door.png" alt="Window cleaning door" />
-          <img src="car-detail-after-tesla.png" alt="Tesla detail after" />
-          <img src="car-detail-after-cadillac.png" alt="Cadillac detail after" />
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section services-section">
-      <div class="container">
-        <div class="section-header">
-          <h2>SERVICES</h2>
-          <p>High-end, professional finishing across every service!</p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card bordered-card">
-            <h3>Window Cleaning</h3>
-            <p>
-              Streak-free, crystal-clear windows for homes and businesses. Inside, outside – we
-              treat glass like it’s a luxury.
-            </p>
-            <ul>
-              <li>Exterior & interior glass</li>
-              <li>Storefront, commercial & residential</li>
-              <li>Typical exterior wash in ~30 minutes*</li>
-            </ul>
-            <p class="tiny-note">*Timing depends on window count and access, but our goal is fast, sharp work that beats surrounding competitors.</p>
-          </article>
-
-          <article class="service-card bordered-card">
-            <h3>Car Detailing</h3>
-            <p>
-              Luxury-level detailing that makes your daily driver feel brand new again – inside and out.
-            </p>
-            <ul>
-              <li>Interior vacuum & steam clean</li>
-              <li>Exterior wash & shine</li>
-              <li>Stain & odor treatment</li>
-            </ul>
-          </article>
-
-          <article class="service-card bordered-card">
-            <h3>Pressure Washing</h3>
-            <p>
-              Restore the original look of your driveway, sidewalks, siding, decks and patios.
-            </p>
-            <ul>
-              <li>Concrete & paver cleaning</li>
-              <li>Decks, patios & fences</li>
-              <li>Building exteriors</li>
-            </ul>
-          </article>
-
-          <article class="service-card bordered-card">
-            <h3>Snow Removal</h3>
-            <p>
-              Reliable winter clearing so your driveways and walkways stay safe and accessible.
-            </p>
-            <ul>
-              <li>Driveways & sidewalks</li>
-              <li>Small lots & entrances</li>
-              <li>On-call or seasonal plans</li>
-            </ul>
-          </article>
-
-          <article class="service-card bordered-card">
-            <h3>Pool Cleaning</h3>
-            <p>
-              Keep your pool clear, balanced and ready to use with regular cleaning and maintenance.
-            </p>
-            <ul>
-              <li>Skimming & vacuuming</li>
-              <li>Filter checks</li>
-              <li>Basic water clarity care*</li>
-            </ul>
-            <p class="tiny-note">*Full chemical service available upon request where permitted.</p>
-          </article>
-
-          <article class="service-card bordered-card">
-            <h3>Trash Bin Cleaning</h3>
-            <p>
-              Eliminate odors and grime with high-heat cleaning for trash, recycling and yard bins.
-            </p>
-            <ul>
-              <li>Degrease & sanitize</li>
-              <li>Deodorize & rinse</li>
-              <li>On a schedule or one-time</li>
-            </ul>
-          </article>
-
-          <article class="service-card bordered-card service-card-wide">
-            <h3>Miscellaneous & Custom Work</h3>
-            <p>
-              Have a job that doesn’t quite fit a label? AllSet is built for the in-between work that still needs a
-              professional touch.
-            </p>
-            <ul class="two-column-list">
-              <li>Garage & shop clean-ups</li>
-              <li>Patio furniture cleaning</li>
-              <li>Move-in / move-out exterior freshen-up</li>
-              <li>Small odd jobs – ask if it’s “AllSet-approved”</li>
-            </ul>
-            <p class="tiny-note">Tell us what you need. If we can’t do it, we’ll try to point you to someone who can.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- WHY ALLSET -->
-    <section id="why" class="section">
-      <div class="container bordered-card">
-        <div class="why-grid">
-          <div class="section-header align-left">
-            <h2>Why AllSet?</h2>
-            <p>One brand, one standard. Your property and vehicles stay sharp without juggling five different companies.</p>
-          </div>
-          <div class="why-points">
-            <div class="why-item">
-              <h3>Locally Owned & Student-Run</h3>
-              <p>
-                AllSet is owned and operated in Iowa City by <strong>Laith Alawneh</strong>, a freshman business student,
-                alongside a small crew of City High wrestlers (independent, not school-affiliated). Same faces, same effort, every visit.
-              </p>
+        <div class="showcase-grid">
+          <article class="showcase-card">
+            <div class="slider" data-slider="car">
+              <img src="assets/car1.png" alt="Car detailing work" />
+              <button class="slider-btn prev" type="button" aria-label="Previous car detailing photo">‹</button>
+              <button class="slider-btn next" type="button" aria-label="Next car detailing photo">›</button>
             </div>
-            <div class="why-item">
-              <h3>Multi-Service Convenience</h3>
-              <p>
-                Windows, cars, concrete, snow, pools, bins and more – bundled service means better pricing and fewer
-                headaches.
-              </p>
+            <div class="showcase-copy">
+              <p class="card-label">Detail</p>
+              <h3>Car Detailing</h3>
+              <p>Interior refreshes, leather care, vacuuming, wipe-downs, and clean finishes that make your vehicle feel sharp again.</p>
+              <a href="#contact">Get detailing quote →</a>
             </div>
-            <div class="why-item">
-              <h3>Trusted Downtown</h3>
-              <p>
-                We already wash and maintain a growing portion of downtown Iowa City storefronts and offices, giving you
-                the reliability of a team that businesses trust.
-              </p>
+          </article>
+
+          <article class="showcase-card featured-card">
+            <div class="slider" data-slider="windows">
+              <img src="assets/win1.png" alt="Window cleaning work" />
+              <button class="slider-btn prev" type="button" aria-label="Previous window cleaning photo">‹</button>
+              <button class="slider-btn next" type="button" aria-label="Next window cleaning photo">›</button>
             </div>
-            <div class="why-item">
-              <h3>Detail Obsessed</h3>
-              <p>
-                Straight lines, sharp edges, proper rinses, no shortcuts. We treat every job like it’s going on a
-                before-and-after post.
-              </p>
+            <div class="showcase-copy">
+              <p class="card-label">Glass</p>
+              <h3>Window Cleaning</h3>
+              <p>Residential and commercial glass cleaned for better reflections, better curb appeal, and a brighter look.</p>
+              <a href="#contact">Get window quote →</a>
             </div>
-          </div>
+          </article>
+
+          <article class="showcase-card">
+            <div class="before-after" id="sidingCompare">
+              <img src="assets/siding-after.png" alt="Clean siding after service" class="after-img" />
+              <div class="before-wrap" id="beforeWrap">
+                <img src="assets/siding-before.png" alt="Dirty siding before service" class="before-img" />
+              </div>
+              <input type="range" min="0" max="100" value="50" class="compare-range" id="compareRange" aria-label="Compare siding before and after" />
+              <div class="compare-line" id="compareLine"></div>
+              <span class="before-tag">Before</span>
+              <span class="after-tag">After</span>
+            </div>
+            <div class="showcase-copy">
+              <p class="card-label">Exterior</p>
+              <h3>Siding & Washing</h3>
+              <p>Siding, exterior buildup, grime, pollen, and surface dirt cleaned with the right process for the material.</p>
+              <a href="#contact">Get exterior quote →</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- INFO STRIP -->
-    <section class="section section-muted">
-      <div class="container info-grid">
-        <div class="info-block bordered-card">
-          <h3>Service Area</h3>
-          <p>
-            Based in Iowa City and focused on local homes and businesses. Downtown storefronts, neighborhoods and small
-            commercial properties are our core routes.
-          </p>
-        </div>
-        <div class="info-block bordered-card">
-          <h3>Hours</h3>
-          <p>
-            Flexible scheduling with weekend options. Early morning and evening slots available for commercial clients.
-          </p>
-        </div>
-        <div class="info-block bordered-card">
-          <h3>Seasonal Services</h3>
-          <p>
-            Snow removal in winter, pressure washing and pool care in warmer months – AllSet adjusts with the weather.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT US -->
-    <section id="about" class="section">
-      <div class="container about-grid bordered-card">
-        <div class="about-photo-wrap">
-          <img src="owner-laith.jpg" alt="Laith Alawneh, owner of AllSet" class="about-photo">
-        </div>
-        <div class="about-content">
-          <div class="section-header align-left">
-            <h2>About AllSet</h2>
-            <p>A small, hungry crew with big standards.</p>
-          </div>
-          <p>
-            Hey, I’m <strong>Laith Alawneh</strong>, owner and starter of AllSet. I’m a freshman studying business
-            and I built AllSet to bring clean, reliable exterior and auto care to Iowa City without the big-company stiffness.
-          </p>
-          <p>
-            Our team is made up of local students and wrestlers from City High (independent, not affiliated with the school).
-            We bring that wrestling-room work ethic to every driveway, storefront and vehicle we touch.
-          </p>
-          <p>
-            We move fast without cutting corners – a typical exterior window wash takes around <strong>30 minutes</strong>, so you
-            get sharp results without losing your whole day.
-          </p>
-          <p>
-            We already clean and maintain a good portion of downtown Iowa City, and we’d be honored to add your home,
-            cars or business to the routes we take pride in.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / QUOTE -->
-    <section id="contact" class="section">
-      <div class="container contact-grid">
+    <section id="why" class="section why-section">
+      <div class="container why-card">
         <div>
-          <div class="section-header align-left">
-            <h2>Request a Quote</h2>
-            <p>
-              Tell us what you need and we’ll respond with a clean, simple quote – no spam, no pressure.
-            </p>
-          </div>
-          <ul class="contact-highlights">
-            <li>Bundle multiple services for better value</li>
-            <li>Perfect for homes, landlords & small businesses</li>
-            <li>Trusted on a growing stretch of downtown Iowa City</li>
-          </ul>
-          <p class="direct-contact">
-            Prefer to talk now? Call or text us directly at
-            <a href="tel:+13194711377">(319) 471-1377</a>.
+          <p class="kicker">Why AllSet</p>
+          <h2>Premium look, local work ethic.</h2>
+          <p>
+            AllSet keeps the process simple: fast responses, clear expectations, real photos, and clean finishes across windows, detailing, and exterior care.
           </p>
         </div>
+        <div class="why-grid">
+          <div>
+            <strong>Local ownership</strong>
+            <p>Iowa City operated with direct owner involvement.</p>
+          </div>
+          <div>
+            <strong>Multi-service convenience</strong>
+            <p>Bundle windows, detailing, washing, and seasonal work.</p>
+          </div>
+          <div>
+            <strong>Real work photos</strong>
+            <p>Show customers actual results before they book.</p>
+          </div>
+          <div>
+            <strong>Clear quote flow</strong>
+            <p>Customers can text, call, or submit the form.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <!-- SINGLE, CLEAN FORM FOR FORMSPREE -->
-        <form
-          class="quote-form bordered-card"
-          id="quoteForm"
-          action="https://formspree.io/f/mpqjqjwj"
-          method="POST"
-        >
+    <section id="florida" class="florida-section">
+      <div class="container florida-inner">
+        <div>
+          <p class="kicker dark-kicker">New service area</p>
+          <h2>Now serving Cape Coral, Florida.</h2>
+          <p>
+            AllSet is now serving Cape Coral, Florida, with exterior washing, window cleaning, detailing, and seasonal property care.
+          </p>
+          <a href="#contact" class="btn dark-btn">Ask About Florida Service</a>
+        </div>
+        <div class="florida-cards">
+          <div>
+            <strong>Cape Coral</strong>
+            <p>Specific local service area for Florida work.</p>
+          </div>
+          <div>
+            <strong>Coastal exterior care</strong>
+            <p>Built for sun, pollen, salt, grime, and bright glass.</p>
+          </div>
+          <div>
+            <strong>Warm-weather AllSet</strong>
+            <p>Same clean standard, tropical-ready presentation.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about-section">
+      <div class="container about-card">
+        <div class="about-photo-wrap">
+          <img src="assets/owner-laith.jpg" alt="Laith Alawneh, owner of AllSet" class="about-photo" loading="lazy" decoding="async" />
+        </div>
+        <div class="about-copy">
+          <p class="kicker">About</p>
+          <h2>About AllSet</h2>
+          <p class="about-lead">A small, hungry crew with big standards.</p>
+          <p>
+            Hey, I&rsquo;m Laith Alawneh, owner and starter of AllSet. I&rsquo;m a freshman studying business and I built AllSet to bring clean, reliable exterior and auto care to Iowa City without the big-company stiffness.
+          </p>
+          <p>
+            Our team is made up of local students and wrestlers from City High, independent and not affiliated with the school. We bring that wrestling-room work ethic to every driveway, storefront, and vehicle we touch.
+          </p>
+          <p>
+            We move fast without cutting corners, so you get sharp results without losing your whole day. We already clean and maintain a good portion of downtown Iowa City, and we&rsquo;d be honored to add your home, cars, or business to the routes we take pride in.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section quote-section">
+      <div class="container quote-layout">
+        <div class="quote-copy">
+          <p class="kicker">Free quote</p>
+          <h2>Ready to be AllSet?</h2>
+          <p>
+            Tell us what you need cleaned and we’ll respond with a clear quote. Bundle multiple services for better value.
+          </p>
+          <ul>
+            <li>Window cleaning</li>
+            <li>Car detailing</li>
+            <li>Siding / pressure washing</li>
+            <li>Florida service requests</li>
+          </ul>
+          <p class="direct-contact">Prefer to text? <a href="tel:+13194711377">(319) 471-1377</a></p>
+        </div>
+
+        <form class="quote-form" id="quoteForm" action="https://formspree.io/f/mpqjqjwj" method="POST">
           <input type="hidden" name="_subject" value="New AllSet quote request" />
-
           <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name*</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone*</label>
-              <input type="tel" id="phone" name="phone" required />
-            </div>
+            <label>
+              Name*
+              <input type="text" name="name" required />
+            </label>
+            <label>
+              Phone*
+              <input type="tel" name="phone" required />
+            </label>
           </div>
-
           <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" />
-            </div>
-            <div class="form-group">
-              <label for="location">City / Area</label>
-              <input type="text" id="location" name="location" placeholder="Downtown, east side, Coralville..." />
-            </div>
+            <label>
+              Email
+              <input type="email" name="email" />
+            </label>
+            <label>
+              City / Area
+              <input type="text" name="location" placeholder="Iowa City, Coralville, Cape Coral..." />
+            </label>
           </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="cars">Number of vehicles</label>
-              <input type="number" id="cars" name="cars" min="0" placeholder="2" />
-            </div>
-            <div class="form-group">
-              <label for="stories">Stories of home</label>
-              <select id="stories" name="stories">
-                <option value="">Select...</option>
-                <option>1 story</option>
-                <option>2 stories</option>
-                <option>3+ stories</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="servicesSelect">Which services are you interested in?</label>
-            <select id="servicesSelect" name="services" multiple>
+          <label>
+            Service needed
+            <select name="service">
               <option>Window Cleaning</option>
               <option>Car Detailing</option>
-              <option>Pressure Washing</option>
-              <option>Snow Removal</option>
-              <option>Pool Cleaning</option>
-              <option>Trash Bin Cleaning</option>
-              <option>Miscellaneous / Other</option>
+              <option>Siding / Pressure Washing</option>
+              <option>Seasonal Service</option>
+              <option>Multiple Services</option>
+              <option>Florida Service</option>
             </select>
-            <small class="field-note">Hold Ctrl (Windows) or Cmd (Mac) to select multiple.</small>
-          </div>
-
-          <div class="form-group">
-            <label for="frequency">How often?</label>
-            <select id="frequency" name="frequency">
-              <option value="">One-time clean</option>
-              <option>Every week</option>
-              <option>Every 2 weeks</option>
-              <option>Monthly</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="message">Tell us about the job</label>
-            <textarea id="message" name="message" rows="4" placeholder="Example: 2-story house, 3 cars, driveway + front walk, weekly trash bin cleaning..."></textarea>
-          </div>
-
-          <button type="submit" class="btn primary-btn full-width">Send Request</button>
-          <p class="form-note" id="formNote">
-            Your request will be saved here – we’ll reach out using the contact info you provided.
-          </p>
+          </label>
+          <label>
+            Job details
+            <textarea name="message" rows="5" placeholder="Tell us about the home, car, windows, siding, timing, or anything we should know."></textarea>
+          </label>
+          <button class="btn primary-btn full-width" type="submit">Send Request</button>
+          <p class="form-note" id="formNote">We’ll reach out using the contact info you provided.</p>
         </form>
       </div>
     </section>
@@ -425,16 +271,8 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> AllSet Services. All rights reserved.</p>
-      <p class="footer-sub">
-        Exterior cleaning, detailing & seasonal services – professionally handled.
-      </p>
-      <p class="footer-sub">
-        Follow us:
-        <a href="https://www.instagram.com/allset_services01/" target="_blank" rel="noopener">Instagram</a>
-        ·
-        <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
-      </p>
+      <p>© <span id="year"></span> AllSet Cleaning. All rights reserved.</p>
+      <p><a href="https://www.instagram.com/allset_services01/" target="_blank" rel="noopener">Instagram</a></p>
     </div>
   </footer>
 
