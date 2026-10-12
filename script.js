@@ -143,12 +143,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const winCount = document.getElementById("winCount");
   const calcTotal = document.getElementById("calcTotal");
   const calcCta = document.getElementById("calcCta");
+  const calcBreakdown = document.getElementById("calcBreakdown");
 
   const updateCalc = () => {
     if (!winRange || !calcTotal) return;
     const n = parseInt(winRange.value, 10) || 0;
     if (winCount) winCount.textContent = n;
-    calcTotal.textContent = "$" + n * 10;
+    calcTotal.textContent = "$" + (n * 8 + 50);
+    if (calcBreakdown) calcBreakdown.textContent = "$8 × " + n + " windows + $50 trip fee";
   };
 
   if (winRange) {
@@ -161,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const n = winRange ? parseInt(winRange.value, 10) || 0 : 0;
       const msg = document.querySelector('#quoteForm textarea[name="message"]');
       if (msg && !msg.value) {
-        msg.value = "Instant quote estimate: " + n + " windows \u2248 $" + n * 10 + " (approximate). Please confirm my final quote.";
+        msg.value = "Instant quote estimate: " + n + " windows ($8/window + $50 trip fee) \u2248 $" + (n * 8 + 50) + " (approximate). Please confirm my final quote.";
       }
     });
   }

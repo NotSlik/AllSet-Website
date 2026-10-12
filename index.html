@@ -84,7 +84,7 @@
           <p class="kicker">Instant quote</p>
           <h2>Your number in 10 seconds.</h2>
           <p>
-            Window cleaning at a flat <strong>$10 per window</strong>. Drag the slider to your window count and see your estimate instantly &mdash; then send it straight to us as your quote request.
+            Window cleaning at <strong>$8 per window</strong> plus a <strong>$50 trip fee</strong>. Drag the slider to your window count and see your estimate instantly &mdash; then send it straight to us as your quote request.
           </p>
           <ul class="calc-points">
             <li>No hidden fees</li>
@@ -98,9 +98,10 @@
             <output id="winCount" for="winRange">12</output>
           </div>
           <input type="range" id="winRange" min="1" max="60" value="12" step="1" aria-label="Number of windows" />
+          <p class="calc-breakdown" id="calcBreakdown">$8 × 12 windows + $50 trip fee</p>
           <div class="calc-total">
             <span>Estimated total</span>
-            <strong id="calcTotal">$96</strong>
+            <strong id="calcTotal">$146</strong>
           </div>
           <p class="calc-note">~Approximate &mdash; final quote may be adjusted based on window size and difficulty.</p>
           <a href="#contact" class="btn primary-btn full-width" id="calcCta">Request this quote</a>

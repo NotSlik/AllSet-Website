@@ -516,6 +516,7 @@ input:focus, select:focus, textarea:focus { border-color: rgba(111, 254, 241, 0.
 .calc-total strong { font-size: 2.3rem; font-weight: 900; color: var(--teal); letter-spacing: 0; }
 
 .calc-note { margin: 0; color: var(--muted); font-size: 0.85rem; font-style: italic; }
+.calc-breakdown { margin: 10px 0 2px; color: var(--muted); font-size: 0.9rem; }
 
 /* ---------- guarantee ---------- */
 
