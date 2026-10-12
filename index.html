@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AllSet Cleaning | Exterior Care</title>
-  <meta name="description" content="AllSet Cleaning provides window cleaning, pressure washing, detailing, and seasonal exterior services in Iowa City, Iowa." />
+  <meta name="description" content="AllSet Cleaning: window cleaning, pressure washing, car detailing in Iowa City, Iowa. Licensed & insured with a 7-day 100% satisfaction guarantee." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -12,6 +12,16 @@
 </head>
 <body>
   <header class="header">
+    <div class="trust-bar">
+      <div class="container trust-bar-inner">
+        <span>&#10003; Licensed &amp; Insured</span>
+        <span class="trust-sep">|</span>
+        <span>&#10003; 7-Day 100% Satisfaction Guarantee</span>
+        <span class="trust-sep">|</span>
+        <span>Iowa City Owned &amp; Operated</span>
+      </div>
+    </div>
+
     <div class="container header-inner">
       <a href="#hero" class="brand" aria-label="AllSet Cleaning home">
         <img src="assets/logo.png" alt="AllSet Cleaning logo" class="brand-logo" />
@@ -20,7 +30,9 @@
 
       <nav class="nav" id="navMenu" aria-label="Main navigation">
         <a href="#hero">Home</a>
+        <a href="#instant-quote">Instant Quote</a>
         <a href="#services">Services</a>
+        <a href="plans.html">Plans</a>
         <a href="#why">Why AllSet</a>
         <a href="#about">About</a>
         <a href="#contact">Quote</a>
@@ -66,6 +78,36 @@
       </div>
     </section>
 
+    <section id="instant-quote" class="section calc-section">
+      <div class="container calc-card">
+        <div class="calc-copy">
+          <p class="kicker">Instant quote</p>
+          <h2>Your number in 10 seconds.</h2>
+          <p>
+            Window cleaning at a flat <strong>$8 per window</strong>. Drag the slider to your window count and see your estimate instantly &mdash; then send it straight to us as your quote request.
+          </p>
+          <ul class="calc-points">
+            <li>No hidden fees</li>
+            <li>Sills &amp; tracks included</li>
+            <li>7-day satisfaction guarantee</li>
+          </ul>
+        </div>
+        <div class="calc-widget">
+          <div class="calc-slider-row">
+            <label for="winRange">Number of windows</label>
+            <output id="winCount" for="winRange">12</output>
+          </div>
+          <input type="range" id="winRange" min="1" max="60" value="12" step="1" aria-label="Number of windows" />
+          <div class="calc-total">
+            <span>Estimated total</span>
+            <strong id="calcTotal">$96</strong>
+          </div>
+          <p class="calc-note">~Approximate &mdash; final quote may be adjusted based on window size and difficulty.</p>
+          <a href="#contact" class="btn primary-btn full-width" id="calcCta">Request this quote</a>
+        </div>
+      </div>
+    </section>
+
     <section id="services" class="section services-showcase">
       <div class="container">
         <div class="section-header">
@@ -85,7 +127,7 @@
               <p class="card-label">Detail</p>
               <h3>Car Detailing</h3>
               <p>Interior refreshes, leather care, vacuuming, wipe-downs, and clean finishes that make your vehicle feel sharp again.</p>
-              <a href="#contact">Get detailing quote →</a>
+              <a href="car-detailing.html">See detailing packages →</a>
             </div>
           </article>
 
@@ -99,7 +141,7 @@
               <p class="card-label">Glass</p>
               <h3>Window Cleaning</h3>
               <p>Residential and commercial glass cleaned for better reflections, better curb appeal, and a brighter look.</p>
-              <a href="#contact">Get window quote →</a>
+              <a href="interior-window-cleaning.html">Interior &amp; exterior options →</a>
             </div>
           </article>
 
@@ -122,6 +164,7 @@
             </div>
           </article>
         </div>
+        <p class="services-more">Own a business? See our <a href="commercial.html">commercial services</a> and <a href="plans.html">recurring plans</a>.</p>
       </div>
     </section>
 
@@ -152,6 +195,14 @@
             <p>Customers can text, call, or submit the form.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section guarantee-section">
+      <div class="container guarantee-card">
+        <p class="kicker">Our promise</p>
+        <h2>7-Day 100% Satisfaction Guarantee</h2>
+        <p>If anything isn&rsquo;t perfect within 7 days of your visit, we come back and make it right &mdash; free. No fine print, no hassle.</p>
       </div>
     </section>
 

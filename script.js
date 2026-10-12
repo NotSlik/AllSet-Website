@@ -101,6 +101,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  const winRange = document.getElementById("winRange");
+  const winCount = document.getElementById("winCount");
+  const calcTotal = document.getElementById("calcTotal");
+  const calcCta = document.getElementById("calcCta");
+
+  const updateCalc = () => {
+    if (!winRange || !calcTotal) return;
+    const n = parseInt(winRange.value, 10) || 0;
+    if (winCount) winCount.textContent = n;
+    calcTotal.textContent = "$" + n * 8;
+  };
+
+  if (winRange) {
+    winRange.addEventListener("input", updateCalc);
+    updateCalc();
+  }
+
+  if (calcCta) {
+    calcCta.addEventListener("click", () => {
+      const n = winRange ? parseInt(winRange.value, 10) || 0 : 0;
+      const msg = document.querySelector('#quoteForm textarea[name="message"]');
+      if (msg && !msg.value) {
+        msg.value = "Instant quote estimate: " + n + " windows \u2248 $" + n * 8 + " (approximate). Please confirm my final quote.";
+      }
+    });
+  }
+
   const sections = document.querySelectorAll(".section");
 
   const revealSections = () => {
