@@ -94,26 +94,19 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCompare();
   }
 
-  // Google Ads conversion tag for the "Request quote" action
-  // (read from Google Ads > Goals > Conversions, Oct 12 2026).
-  const ADS_CONVERSION = { id: "AW-18496943428", label: "XLzKCNmwxJMdEMTqg_RE" };
+  // Google Ads conversion tag for the "Request quote" action.
+  // Filled in from the Google Ads account (Goals > Conversions). Until set,
+  // the form still submits and redirects to thank-you.html.
+  const ADS_CONVERSION = { id: null, label: null };
 
-  // Fires the conversion, then calls done(). Redirect waits for Google's
-  // callback (or a 1.5s fallback) so the conversion is never lost.
-  const fireAdsConversion = (done) => {
-    let finished = false;
-    const finish = () => { if (!finished) { finished = true; done(); } };
+  const fireAdsConversion = () => {
     try {
       if (window.gtag && ADS_CONVERSION.id && ADS_CONVERSION.label) {
         window.gtag("event", "conversion", {
-          send_to: ADS_CONVERSION.id + "/" + ADS_CONVERSION.label,
-          event_callback: finish
+          send_to: ADS_CONVERSION.id + "/" + ADS_CONVERSION.label
         });
-        setTimeout(finish, 1500);
-        return;
       }
     } catch (e) { /* tracking must never break the form */ }
-    finish();
   };
 
   if (quoteForm) {
@@ -130,7 +123,8 @@ document.addEventListener("DOMContentLoaded", () => {
       })
         .then((response) => {
           if (response.ok) {
-            fireAdsConversion(() => { window.location.href = "thank-you.html"; });
+            fireAdsConversion();
+            window.location.href = "thank-you.html";
           } else {
             throw new Error("form error");
           }
@@ -154,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!winRange || !calcTotal) return;
     const n = parseInt(winRange.value, 10) || 0;
     if (winCount) winCount.textContent = n;
-    calcTotal.textContent = "$" + n * 8;
+    calcTotal.textContent = "$" + n * 10;
   };
 
   if (winRange) {
@@ -167,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const n = winRange ? parseInt(winRange.value, 10) || 0 : 0;
       const msg = document.querySelector('#quoteForm textarea[name="message"]');
       if (msg && !msg.value) {
-        msg.value = "Instant quote estimate: " + n + " windows \u2248 $" + n * 8 + " (approximate). Please confirm my final quote.";
+        msg.value = "Instant quote estimate: " + n + " windows \u2248 $" + n * 10 + " (approximate). Please confirm my final quote.";
       }
     });
   }
