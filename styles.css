@@ -692,3 +692,16 @@ input:focus, select:focus, textarea:focus { border-color: rgba(111, 254, 241, 0.
   color: var(--muted);
   line-height: 1.65;
 }
+
+/* ---------- mobile overrides (must stay last: base rules above would otherwise win) ---------- */
+@media (max-width: 980px) {
+  .hero-strip, .showcase-grid, .section-header, .why-card, .about-card, .quote-layout,
+  .calc-card, .plan-grid, .steps-grid { grid-template-columns: 1fr; }
+  .plan-card.featured { transform: none; }
+  .page-hero { padding: 190px 0 64px; }
+}
+@media (max-width: 640px) {
+  .calc-card, .guarantee-card, .cta-card { padding: 24px; }
+  .page-hero { padding: 170px 0 60px; }
+  .calc-total strong { font-size: 1.9rem; }
+}
