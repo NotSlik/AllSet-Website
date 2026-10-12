@@ -540,3 +540,17 @@ input:focus, select:focus, textarea:focus { border-color: rgba(111, 254, 241, 0.
   .calc-card, .guarantee-card, .cta-card { padding: 24px; }
   .page-actions .btn { width: 100%; }
 }
+
+.plan-price { margin: 0; font-size: 1.5rem; font-weight: 900; color: var(--teal); }
+.plan-price span { font-size: 0.85rem; font-weight: 700; color: var(--muted); }
+.plan-note {
+  max-width: 880px;
+  margin: 26px auto 0;
+  padding: 18px 22px;
+  text-align: center;
+  border: 1px solid rgba(111, 254, 241, 0.28);
+  border-radius: 16px;
+  background: rgba(111, 254, 241, 0.07);
+  color: var(--muted);
+  line-height: 1.65;
+}
