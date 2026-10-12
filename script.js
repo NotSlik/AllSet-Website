@@ -94,10 +94,47 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCompare();
   }
 
-  if (quoteForm && formNote) {
-    quoteForm.addEventListener("submit", () => {
-      formNote.textContent = "Thanks! Your request has been sent. We will reach out soon.";
-      formNote.style.color = "#a5f3fc";
+  // Google Ads conversion tag for the "Request quote" action.
+  // Filled in from the Google Ads account (Goals > Conversions). Until set,
+  // the form still submits and redirects to thank-you.html.
+  const ADS_CONVERSION = { id: null, label: null };
+
+  const fireAdsConversion = () => {
+    try {
+      if (window.gtag && ADS_CONVERSION.id && ADS_CONVERSION.label) {
+        window.gtag("event", "conversion", {
+          send_to: ADS_CONVERSION.id + "/" + ADS_CONVERSION.label
+        });
+      }
+    } catch (e) { /* tracking must never break the form */ }
+  };
+
+  if (quoteForm) {
+    quoteForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (formNote) {
+        formNote.textContent = "Sending your request...";
+        formNote.style.color = "#a5f3fc";
+      }
+      fetch(quoteForm.action, {
+        method: "POST",
+        body: new FormData(quoteForm),
+        headers: { Accept: "application/json" }
+      })
+        .then((response) => {
+          if (response.ok) {
+            fireAdsConversion();
+            window.location.href = "thank-you.html";
+          } else {
+            throw new Error("form error");
+          }
+        })
+        .catch(() => {
+          if (formNote) {
+            formNote.textContent =
+              "Something went wrong sending your request. Please text us at (319) 471-1377.";
+          }
+        });
     });
   }
 
